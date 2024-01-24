@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NON COMPANY </title>
+<style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      background-color: #2f3e46; /* Petrol blue background */
+      color: #d4af37; /* Gold colored text */
+    }
+    .tab {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #334e58; /* A shade of petrol blue for tabs */
+    }
+    .tablinks {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      border: 1px solid #d4af37; /* Gold border for the tabs */
+      background-color: #2f3e46; /* Petrol blue for the tab buttons */
+      color: #d4af37; /* Gold text for the tab buttons */
+    }
+    .tablinks img {
+      margin-right: 8px;
+    }
+    .tabcontent {
+      display: none;
+      padding: 60px 20px;
+      height: calc(100% - 50px);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .tabcontent.active {
+      display: block;
+    }
+   /* Style for the product container */
+   #Products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+   }
+
+/* Style for individual product items */
+  .product {
+    flex: 0 1 30%; /* Each product will take up to 30% of the container width */
+    box-sizing: border-box;
+    margin: 10px; /* Space between items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+/* Style for product images */
+ .product img {
+  width: auto; /* Auto width to maintain aspect ratio */
+  max-width: 100%; /* Maximum width is 100% of the product container */
+  max-height: 150px; /* Maximum height for images */
+  margin-bottom: 10px; /* Space between the image and the button */
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Client')">
+    <img src="https://www.shutterstock.com/image-vector/clients-sign-icon-group-people-260nw-404234248.jpg" alt="Client Logo" style="width:30px;height:30px;">
+    Client
+  </button>
+  <button class="tablinks" onclick="openTab(event, 'Products')">
+    <img src="https://www.rabbitandwolves.com/wp-content/uploads/2017/12/DSC_0977.jpg" alt="Products" style="width:30px;height:30px;">
+    Products
+  </button>
+  <button class="tablinks" onclick="openTab(event, 'Cart')">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/004/798/846/small/shopping-cart-logo-or-icon-design-vector.jpg" alt="Cart Logo" style="width:30px;height:30px;">
+    Cart
+  </button>
+</div>
+
+<div id="Client" class="tabcontent">
+  <!-- Leave this empty for your lab -->
+</div>
+
+<div id="Products" class="tabcontent">
+    <div class="product">
+        <h2>Fish</h2>
+        <img src="https://i5.walmartimages.ca/images/Enlarge/415/401/6000204415401.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Fish" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>Sausage</h2>
+        <img src="https://lovingitvegan.com/wp-content/uploads/2021/03/Vegan-Sausages-24-500x500.jpg" alt="Sausage" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>Beef</h2>
+        <img src="https://cdn.britannica.com/68/143268-050-917048EA/Beef-loin.jpg" alt="Beef" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>Bread</h2>
+        <img src="https://tastesbetterfromscratch.com/wp-content/uploads/2020/03/Bread-Recipe-5-2.jpg" alt="Bread" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>Blueberrie</h2>
+        <img src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/blueberries-1296x728-feature.jpg" alt="Blueberrie" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>Banana</h2>
+        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bunch-of-bananas-67e91d5.jpg?quality=90&resize=440,400" alt="Banana" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>Tofu</h2>
+        <img src="https://sweetsimplevegan.com/wp-content/uploads/2020/09/Easy-Crispy-Baked-Tofu-Recipe-Sweet-Simple-Vegan-6.jpg" alt="Tofu" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>Tomato </h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg" alt="Tomato" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>Whole grain bread</h2>
+        <img src=https://www.sideofsneakers.com/wp-content/uploads/2011/10/IMG_0236-500x333_thumb.jpg" alt="Whole grain Bread" />
+        <button type="button">Add</button>
+      </div>
+    <div class="product">
+        <h2>GF Muffin</h2>
+        <img src="https://sugargeekshow.com/wp-content/uploads/2019/10/chocolate-chip-muffins-featured.jpg" alt="GF Muffin" />
+        <button type="button">Add</button>
+      </div>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <div style="text-align: center;">
+    <h3>Cart</h3>
+    <p>Here is your cart.</p>
+  </div>
+  <div id="displayCart" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+</div>
+
+
+<script src="tab.js"></script>
+
+</body>
+</html>
+
