@@ -90,9 +90,34 @@
 </div>
 
 <div id="Client" class="tabcontent">
-  <!-- Leave this empty for your lab -->
-</div>
+     <h3>Client Information</h3>
+     <p>To help us better satisfy your needs, we would like to know your dietary preferences.</p>
 
+     <p>Do you have any of the following dietary restrictions or preferences?</p>
+     <div class="restrictionsCheckboxes" id="restrictionsCheckboxes" name="restrictionsCheckboxes"
+        onchange="restrictProductChoices()">
+        <div class="choiceBox">
+            <input type="checkbox" id="lactoseIntolerant" name="restriction">
+            <label for="lactoseIntolerant">Vegetarian</label>
+        </div>
+
+        <div class="choiceBox">
+            <input type="checkbox" id="nutAllergies" name="restriction">
+            <label for="nutAllergies">GlutenFree</label>
+        </div>
+
+        <div class="choiceBox">
+            <input type="checkbox" id="organic" name="restriction">
+            <label for="organic">Prefer Organic</label>
+        </div>
+        <div class="choiceBox">
+            <input type="checkbox" id="organic" name="restriction">
+            <label for="organic">None</label>
+                
+        </div>
+    </div>
+</div>
+ 
 <div id="Products" class="tabcontent">
     <div class="product">
         <h2>Fish</h2>
