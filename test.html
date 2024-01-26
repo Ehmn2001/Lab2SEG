@@ -52,7 +52,7 @@
 
 /* Style for individual product items */
   .product {
-    flex: 0 1 30%; /* Each product will take up to 30% of the container width */
+    flex: 0 1 30%; 
     box-sizing: border-box;
     margin: 10px; /* Space between items */
     display: flex;
@@ -62,9 +62,9 @@
 
 /* Style for product images */
  .product img {
-  width: auto; /* Auto width to maintain aspect ratio */
-  max-width: 100%; /* Maximum width is 100% of the product container */
-  max-height: 150px; /* Maximum height for images */
+  width: auto; 
+  max-width: 100%; 
+  max-height: 150px; 
   margin-bottom: 10px; /* Space between the image and the button */
 }
 
@@ -119,60 +119,72 @@
 </div>
  
 <div id="Products" class="tabcontent">
-    <div class="product">
-        <h2>Fish</h2>
-        <img src="https://i5.walmartimages.ca/images/Enlarge/415/401/6000204415401.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Fish" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Sausage</h2>
-        <img src="https://lovingitvegan.com/wp-content/uploads/2021/03/Vegan-Sausages-24-500x500.jpg" alt="Sausage" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Organic Beef</h2>
-        <img src="https://cdn.britannica.com/68/143268-050-917048EA/Beef-loin.jpg" alt="Organic Beef" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Bread</h2>
-        <img src="https://tastesbetterfromscratch.com/wp-content/uploads/2020/03/Bread-Recipe-5-2.jpg" alt="Bread" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Organic Blueberrie</h2>
-        <img src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/blueberries-1296x728-feature.jpg" alt="Organic Blueberries" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Organic Bananas</h2>
-        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bunch-of-bananas-67e91d5.jpg?quality=90&resize=440,400" alt="Organic Banana" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Tofu</h2>
-        <img src="https://sweetsimplevegan.com/wp-content/uploads/2020/09/Easy-Crispy-Baked-Tofu-Recipe-Sweet-Simple-Vegan-6.jpg" alt="Tofu" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Tomatoes</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg" alt="Tomatoes" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Gluten free whole grain bagel</h2>
-        <img src="https://www.sideofsneakers.com/wp-content/uploads/2011/10/IMG_0236-500x333_thumb.jpg" alt="Gluten Free Whole grain Bread" />
-        <input type="checkbox" />
-    </div>
-    <div class="product">
-        <h2>Gluten free Muffin</h2>
-        <img src="https://sugargeekshow.com/wp-content/uploads/2019/10/chocolate-chip-muffins-featured.jpg" alt="Gluten free Muffin" />
-        <input type="checkbox" />
-    </div>
-    <div class="confirmation">
-        <p>Confirm your selections</p>
-        <button type="button" id="confirmButton">Confirm</button>
-    </div>
+  
+  <div class="product" data-vegetarian="false" data-glutenFree="false" data-organic="false" data-price = 10.0>
+      <h2>Fish</h2>
+      <img src="https://i5.walmartimages.ca/images/Enlarge/415/401/6000204415401.jpg" alt="Fish" />
+      <input type="checkbox" />
+  </div>
+  
+  <div class="product" data-vegetarian="false" data-glutenFree="false" data-organic="false" data-price = 15.0>
+      <h2>Sausage</h2>
+      <img src="https://lovingitvegan.com/wp-content/uploads/2021/03/Vegan-Sausages-24-500x500.jpg" alt="Sausage" />
+      <input type="checkbox" />
+  </div>
+ 
+  <div class="product" data-vegetarian="false" data-glutenFree="false" data-organic="true" data-price = 13.0>
+      <h2>Organic Beef</h2>
+      <img src="https://cdn.britannica.com/68/143268-050-917048EA/Beef-loin.jpg" alt="Organic Beef" />
+      <input type="checkbox" />
+  </div>
+  
+  <div class="product" data-vegetarian="true" data-glutenFree="false" data-organic="false" data-price = 4>
+      <h2>Bread</h2>
+      <img src="https://tastesbetterfromscratch.com/wp-content/uploads/2020/03/Bread-Recipe-5-2.jpg" alt="Bread" />
+      <input type="checkbox" />
+  </div>
+  
+  <div class="product" data-vegetarian="true" data-glutenFree="false" data-organic="true" data-price = 3>
+      <h2>Organic Blueberrie</h2>
+      <img src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/blueberries-1296x728-feature.jpg" alt="Organic Blueberries" />
+      <input type="checkbox" />
+  </div>
+  
+  <div class="product" data-vegetarian="true" data-glutenFree="false" data-organic="true" data-price = 2>
+      <h2>Organic Bananas</h2>
+      <img src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bunch-of-bananas-67e91d5.jpg?quality=90&resize=440,400" alt="Organic Banana" />
+      <input type="checkbox" />
+  </div>
+ 
+  <div class="product" data-vegetarian="true" data-glutenFree="false" data-organic="false" data-price = 5>
+      <h2>Tofu</h2>
+      <img src="https://sweetsimplevegan.com/wp-content/uploads/2020/09/Easy-Crispy-Baked-Tofu-Recipe-Sweet-Simple-Vegan-6.jpg" alt="Tofu" />
+      <input type="checkbox" />
+  </div>
+ 
+  <div class="product" data-vegetarian="true" data-glutenFree="false" data-organic="false" data-price = 4>
+      <h2>Tomatoes</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg" alt="Tomatoes" />
+      <input type="checkbox" />
+  </div>
+  
+  <div class="product" data-vegetarian="true" data-glutenFree="true" data-organic="false" data-price = 4>
+      <h2>Gluten free whole grain bagel</h2>
+      <img src="https://www.sideofsneakers.com/wp-content/uploads/2011/10/IMG_0236-500x333_thumb.jpg" alt="Gluten Free Whole grain Bread" />
+      <input type="checkbox" />
+  </div>
+  
+  <div class="product" data-vegetarian="true" data-glutenFree="true" data-organic="false" data-price = 5>
+    <h2>Gluten free Muffin</h2>
+    <img src="https://sugargeekshow.com/wp-content/uploads/2019/10/chocolate-chip-muffins-featured.jpg" alt="Gluten free Muffin" />
+    <input type="checkbox" />
+  </div>
+
+  <div class="confirmation">
+    <p>Confirm your selections</p>
+    <button type="button" id="confirm-button">Confirm</button>
+  </div>
+  
 </div>
 
 <div id="Cart" class="tabcontent">
@@ -183,7 +195,7 @@
   <div id="displayCart" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
 </div>
 
-
+<script src="groceries.js"></script>
 <script src="tab.js"></script>
 
 </body>
