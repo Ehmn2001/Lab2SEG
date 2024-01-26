@@ -1,4 +1,3 @@
-// Content of tabs.js
 function openTab(event, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
