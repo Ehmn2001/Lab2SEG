@@ -1,111 +1,68 @@
-// Array of products, each product is an object with different fieldset
-// A set of ingredients should be added to products		 
 
-var products = [
-	{
-		name: "Fish",
-		vegetarian: false,
-		glutenFree: true,
-		organic: false,
-		price: 10.00
-	},
-	{
-		name: "Sausage",
-		vegetarian: false,
-		glutenFree: true,
-		organic: false,
-		price: 5.00
-	},
-	{
-		name: "Organic Beef",
-		vegetarian: false,
-		glutenFree: true,
-		organic: true,
-		price: 15.00
-	},
-	{
-		name: "Bread",
-		vegetarian: true,
-		glutenFree: false,
-		organic: false,
-		price: 3.00
-	},
-	{
-		name: "Organic Blueberrie",
-		vegetarian: true,
-		glutenFree: true,
-		organic: true,
-		price: 2.00
-	},
-	{
-		name: "Organic Bananas",
-		vegetarian: true,
-		glutenFree: true,
-		organic: true,
-		price: 2.50
-	},
-	{
-		name: "Tofu",
-		vegetarian: true,
-		glutenFree: true,
-		organic: false,
-		price: 12.00
-	},
-	{
-		name: "Tomatoes",
-		vegetarian: true,
-		glutenFree: true,
-		organic: false,
-		price: 5.00
-	},
-	{
-		name: "Gluten free whole grain bagel",
-		vegetarian: true,
-		glutenFree: true,
-		organic: false,
-		price: 6.50
-	},
-	{
-		name: "Gluten free Muffin",
-		vegetarian: true,
-		glutenFree: true,
-		organic: false,
-		price: 7.20
-	}
-	
-];
-	
+function restrictProductChoices() {
+    // Get the state of the checkboxes
+    var vegetarian = document.getElementById('lactoseIntolerant').checked;
+    var glutenFree = document.getElementById('nutAllergies').checked;
+    var organic = document.getElementById('organic').checked;
 
+    // Get the product elements from the HTML
+    var products = document.getElementsByClassName('product');
 
-// given restrictions provided, make a reduced list of products
-// prices should be included in this list, as well as a sort based on price
+    // Loop through the product elements
+    for (var i = 0; i < products.length; i++) {
+        
+        var productVegetarian = products[i].getAttribute('data-vegetarian') === 'true';
+        var productGlutenFree = products[i].getAttribute('data-glutenFree') === 'true';
+        var productOrganic = products[i].getAttribute('data-organic') === 'true';
 
-function restrictListProducts(prods, restriction) {
-	let product_names = [];
-	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
-		}
-		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
-		}
-		else if ((restriction == "Organic") && (prods[i].organic == true)){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "None"){
-			product_names.push(prods[i].name);
-		}
-	}
-	return product_names;
+        // Determine if the product should be shown based on the checkboxes
+        var showProduct = true;
+        if (vegetarian && !productVegetarian) {
+            showProduct = false;
+        }
+        if (glutenFree && !productGlutenFree) {
+            showProduct = false;
+        }
+        if (organic && !productOrganic) {
+            showProduct = false;
+        }
+
+        // Show or hide the product element
+        products[i].style.display = showProduct ? '' : 'none';
+    }
 }
 
-// Calculate the total price of items, with received parameter being a list of products
-function getTotalPrice(chosenProducts) {
-	totalPrice = 0;
-	for (let i=0; i<products.length; i+=1) {
-		if (chosenProducts.indexOf(products[i].name) > -1){
-			totalPrice += products[i].price;
-		}
-	}
-	return totalPrice;
+document.getElementById('confirm-button').addEventListener('click', restrictProductChoices);
+
+
+
+
+function addToCart() {
+    var selectedProducts = []; 
+    var total = 0; 
+
+    
+    var products = document.getElementsByClassName('product');
+    for (var i = 0; i < products.length; i++) {
+        
+        if (products[i].querySelector('input[type="checkbox"]').checked) {
+            var productName = products[i].querySelector('h2').textContent; 
+            selectedProducts.push(productName); 
+
+            
+            var productPrice = products[i].getAttribute('data-price');
+            total += parseFloat(productPrice);
+        }
+    }
+
+    
+    var cartSection = document.getElementById('Cart'); 
+    cartSection.innerHTML = "<h2>You selected:</h2><ul>" + 
+        selectedProducts.map(function(product) {
+            return "<li>" + product + "</li>";
+        }).join('') + 
+        "</ul><p>Your total is: $" + total.toFixed(2) + "</p>";
 }
+
+
+document.getElementById('confirm-button').addEventListener('click', addToCart);
