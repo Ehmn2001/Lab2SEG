@@ -10,4 +10,10 @@ function openTab(event, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   event.currentTarget.className += " active";
+  var signature = document.getElementById("signature");
+  if (tabName === "Products") {
+    signature.style.display = "none";
+  } else {
+    signature.style.display = "block";
+  }
 }
